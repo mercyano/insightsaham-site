@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #title h4 {
+    font-size: 1.5rem;
     color: #c4c4c4;
     padding: 2% 20%;
     line-height: 1.5;
@@ -81,7 +82,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Search Input */
 
 .search-input {
-    padding: 2% 25%;
+    /* padding: 2% 25%; */
+    padding: 0 25%;
 }
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -92,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Predict Section */
 
 #predict .container-fluid {
-    padding: 3% 7%;
+    padding: 3% 7% 7%;
     text-align: left;
 }
 
@@ -104,7 +106,9 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
 }
 
-
+.predict-box {
+    margin-bottom: 2rem;
+}
 
 /* .thumbnail-img {
     width: auto;
@@ -119,4 +123,25 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
+/* Footer Section */
+
+#footer .container-fluid {
+    padding: 4% 0 0.1%;
+    text-align: center;
+}
+
+.footer-link {
+    color: #FFD369; 
+}
+
+.footer-link:hover {
+    text-decoration: none;
+    color: #ffc12b;
+    
+}
+
+.copyright-text {
+    color: #8590a1;
+    padding-top: 3rem;
+}
 
