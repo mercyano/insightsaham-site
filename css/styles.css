@@ -158,15 +158,25 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Stock Prediction Chart Section */
 
-#pred-chart .container-fluid {
+/* #pred-chart .container-fluid {
     padding: 4% 25% 7% 7%;
     text-align: left;
-} 
+} */
+
+.container-fluid.section-container {
+    padding: 1% 25% 2% 7%;
+    text-align: left;
+}
 
 .pred-chart-image {
     /* width: 60%; */
     border: 1px solid #c4c4c4;
 }
+
+.section-heading.pred-heading {
+    margin-top: 2rem;
+}
+
 
 .company-profile-text {
     color: #8f8f8f;
@@ -189,8 +199,10 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-orient: vertical;
  }
 
+
 /* @media (max-width: 1028px) {
     .container-fluid {
         padding-right: 15%;
     }
  } */
+
