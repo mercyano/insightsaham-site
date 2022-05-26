@@ -4,16 +4,24 @@ body {
     padding-top: 60px;
 }
 
+
+/* Headings */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat";
 }
-
-/* Headings */
 
 .big-heading {
     font-family: "Montserrat";
     font-weight: 700;
     font-size: 3rem;
+    line-height: 1.5;
+}
+
+.small-heading {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 1.5rem;
     line-height: 1.5;
 }
 
@@ -145,3 +153,44 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 3rem;
 }
 
+
+/* saham.html */
+
+/* Stock Prediction Chart Section */
+
+#pred-chart .container-fluid {
+    padding: 4% 25% 7% 7%;
+    text-align: left;
+} 
+
+.pred-chart-image {
+    /* width: 60%; */
+    border: 1px solid #c4c4c4;
+}
+
+.company-profile-text {
+    color: #8f8f8f;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.news-image {
+    width: 10vw;
+    max-height: 100%;
+}
+
+.news-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+
+/* @media (max-width: 1028px) {
+    .container-fluid {
+        padding-right: 15%;
+    }
+ } */
