@@ -164,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 .container-fluid.section-container {
-    padding: 1% 25% 2% 7%;
+    padding: 1% 25% 0.1% 7%;
     text-align: left;
 }
 
@@ -205,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  #stock-news .container-fluid {
-    padding-bottom: 7%;
+    padding-bottom: 5%;
  }
 
 
