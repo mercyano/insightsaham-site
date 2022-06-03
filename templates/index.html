@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -24,13 +24,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/IS.png" type="image/x-icon">
+    <link rel="shortcut icon" href="static/images/IS.png" type="image/x-icon">
     <title>InsightSaham.id</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Insight<span style="color: #FFD369">Saham</span><span
+        <a class="navbar-brand" href="#">Insight<span style="color: #FFD369">Saham</span><span
                 style="font-size: 1.7rem; font-weight: 300;">.id</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,11 +40,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-chart-line"></i> Prediksi <span
+                    <a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Prediksi <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Berita</a>
+                    <a class="nav-link" href="{{ url_for('berita') }}"><i class="fas fa-newspaper"></i> Berita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> Tentang</a>
@@ -80,31 +80,31 @@
             <div class="row">
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
+                        <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
-                            <a href="saham.html" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk
+                            <a href="{{ url_for('saham') }}" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk
                                 (INDF)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
+                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/bri-img.jpg" class="card-img-top" alt="logo-bri">
+                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
@@ -112,30 +112,30 @@
 
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
+                        <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk (INDF)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
+                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/bri-img.jpg" class="card-img-top" alt="logo-bri">
+                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
@@ -143,30 +143,30 @@
 
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
+                        <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk (INDF)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
+                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="images/bri-img.jpg" class="card-img-top" alt="logo-bri">
+                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
                         <div class="card-body">
                             <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>

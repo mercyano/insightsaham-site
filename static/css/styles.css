@@ -209,6 +209,13 @@ h1, h2, h3, h4, h5, h6 {
  }
 
 
+/* berita.html */
+
+#all-news .container-fluid {
+    padding: 3% 35% 7% 7%;
+    text-align: left;
+}
+
 /* @media (max-width: 1028px) {
     .container-fluid {
         padding-right: 15%;
