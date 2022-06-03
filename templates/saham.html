@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -24,13 +24,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/IS.png" type="image/x-icon">
+    <link rel="shortcut icon" href="static/images/IS.png" type="image/x-icon">
     <title>Indofood Sukses Makmur Tbk (INDF)</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Insight<span style="color: #FFD369">Saham</span><span
+        <a class="navbar-brand" href="{{ url_for('index') }}">Insight<span style="color: #FFD369">Saham</span><span
                 style="font-size: 1.7rem; font-weight: 300;">.id</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,11 +40,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="fas fa-chart-line"></i> Prediksi <span
+                    <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-chart-line"></i> Prediksi <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Berita</a>
+                    <a class="nav-link" href="{{ url_for('berita') }}"><i class="fas fa-newspaper"></i> Berita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> Tentang</a>
@@ -62,7 +62,7 @@
             <h1 class="section-heading pred-heading">Indofood Sukses Makmur Tbk. (INDF)</h1>
             <hr>
             <h4 class="small-heading">Grafik Prediksi Saham</h4>
-            <img src="images/bbri-pred-chart.png" class="img-fluid pred-chart-image" alt="prediction-image">
+            <img src="static/images/bbri-pred-chart.png" class="img-fluid pred-chart-image" alt="prediction-image">
 
             <hr>
         </div>
@@ -97,28 +97,28 @@
         <div class="container-fluid section-container">
             <h4>Berita Indofood Sukses Makmur Tbk.</h4>
 
-            <div class="media">
-                <img class="mr-3 news-image" src="images/berita-indofood-18-persen.png"
+            <div class="media mt-3">
+                <img class="mr-3 news-image" src="static/images/berita-indofood-18-persen.png"
                     alt="Gambar laba indofood tumbuh 18 persen">
                 <div class="media-body">
                     <a
                         href="https://www.cnbcindonesia.com/market/20220331095334-17-327527/penjualan-moncer-laba-indf-tumbuh-18-sepanjang-2021">Penjualan
                         Moncer, Laba INDF Tumbuh 18% Sepanjang 2021</a>
-                    <p class="gray-text">Cnbcindonesia.com - 31 Maret 2022</p>
+                    <p class="gray-text">Sumber: Cnbcindonesia.com - 31 Maret 2022</p>
                     <p class="news-text read-p">PT Indofood Sukses Makmur Tbk (INDF) berhasil mencetak laba tahun
                         berjalan yang dapat diatribusikan kepada pemilik entitas induk meningkat sebesar 18% menjadi Rp
                         7,64 triliun pada 2021, dari Rp 6,46 triliun pada 2020.</p>
                 </div>
             </div>
             <div>
-                <div class="media">
-                    <img class="mr-3 news-image" src="images/berita-indofood-menakar-kinerja.png"
+                <div class="media mt-3">
+                    <img class="mr-3 news-image" src="static/images/berita-indofood-menakar-kinerja.png"
                         alt="Gambar laba indofood tumbuh 18 persen">
                     <div class="media-body">
                         <a
                             href="https://economy.okezone.com/read/2022/05/16/278/2595015/menakar-kinerja-saham-icbp-dan-indf-usai-india-larang-ekspor-gandum">Menakar
                             Kinerja Saham ICBP dan INDF Usai India Larang Ekspor Gandum</a>
-                        <p class="gray-text">Okezone.com - 16 Mei 2022</p>
+                        <p class="gray-text">Sumber: Okezone.com - 16 Mei 2022</p>
                         <div class="news-text read-p">
                             Pemerintah India melarang ekspor gandum menyusul inflasi indeks harga konsumen tahunan
                             sebesar 7,79% pada April 2022, dengan inflasi makanan melejit 8,38%.
@@ -128,7 +128,7 @@
             </div>
             <!-- <div class="row justify-content-start">
                 <div class="col-4">
-                    <img class="news-image" src="images/berita-indofood-18-persen.png"
+                    <img class="news-image" src="static/images/berita-indofood-18-persen.png"
                         alt="gambar laba indofood tumbuh 18 persen">
                 </div>
                 <div class="col-6">
@@ -143,9 +143,9 @@
                         dari tahun sebelumnya.</p>
                 </div>
             </div> -->
-
-            <a href="https://id.investing.com/news/stock-market-news" class="badge badge-primary float-right mt-2">Lihat lebih <i class="fas fa-angle-double-right"></i></a>
-
+            <!-- ref: https://id.investing.com/news/stock-market-news -->
+            <a href="{{ url_for('berita') }}" class="badge badge-primary float-right mt-2">Lihat lebih <i class="fas fa-angle-double-right"></i></a>
+            
         </div>
 
         
