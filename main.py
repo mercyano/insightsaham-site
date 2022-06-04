@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 class Saham(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(250), unique=True, nullable=False)
-    kode = db.Column(db.String(4), unique=True, nullable=False)
+    kode = db.Column(db.String(4), unique=True, nullable=False) 
     profil = db.Column(db.String(500), nullable=False)
 
     def __repr__(self):
@@ -36,8 +36,8 @@ db.create_all()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
+    all_saham = Saham.query.all()
+    return render_template('index.html', saham=all_saham)
 
 @app.route('/saham')
 def saham():

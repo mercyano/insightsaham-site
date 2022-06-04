@@ -77,8 +77,10 @@
     <section class="white-section" id="predict">
         <div class="container-fluid">
             <h1 class="section-heading">Pilih prediksi saham</h1>
+
+            
             <div class="row">
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
+                <!-- <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
                         <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
@@ -88,91 +90,20 @@
                                 alt="prediction-image">
                         </div>
                     </div>
-                </div>
+                </div> -->
+                {% for shm in saham: %}
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
+                        <img src="static/images/saham/{{ shm.kode }}.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
+                            <a href="{{ url_for('saham') }}" class="card-text btn stretched-link">{{ shm.nama }}
+                                ({{ shm.kode }})</a>
                             <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
                                 alt="prediction-image">
                         </div>
                     </div>
                 </div>
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk (INDF)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/indofood-img2.jpg" class="card-img-top" alt="logo-indofood">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Indofood Sukses Makmur Tbk (INDF)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/telkom-img2.png" class="card-img-top" alt="logo-telkom">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Telkom Indonesia Tbk (TLKM)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-                <div class="predict-box col-lg-4 col-md-6 col-sm-6">
-                    <div class="card text-center">
-                        <img src="static/images/bri-img.jpg" class="card-img-top" alt="logo-bri">
-                        <div class="card-body">
-                            <a href="#" class="card-text btn stretched-link">Bank Rakyat Indonesia Tbk (BBRI)</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
-                                alt="prediction-image">
-                        </div>
-                    </div>
-                </div>
-
-
+                {% endfor %}
 
                 <div class="input-group input-group-lg search-input">
                     <input type="text" class="form-control" placeholder="Kamu mau lihat prediksi saham apa?">
