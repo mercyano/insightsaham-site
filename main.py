@@ -39,9 +39,12 @@ def index():
     all_saham = Saham.query.all()
     return render_template('index.html', saham=all_saham)
 
-@app.route('/saham')
-def saham():
-    return render_template('saham.html')
+@app.route('/saham/')
+@app.route('/saham/<kode_saham>')
+def saham(kode_saham):
+    saham_relevan = Saham.query.filter_by(kode=kode_saham).one()
+    berita_relevan = Berita.query.filter_by(kode_saham=kode_saham).order_by(Berita.tanggal_publish.desc()).limit(5)
+    return render_template('saham.html', berita_rel=berita_relevan, saham_rel=saham_relevan)
 
 @app.route('/berita')
 def berita():

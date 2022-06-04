@@ -96,9 +96,9 @@
                     <div class="card text-center">
                         <img src="static/images/saham/{{ shm.kode }}.jpg" class="card-img-top" alt="logo-indofood">
                         <div class="card-body">
-                            <a href="{{ url_for('saham') }}" class="card-text btn stretched-link">{{ shm.nama }}
+                            <a href="{{ url_for('saham', kode_saham = shm.kode) }}" class="card-text btn stretched-link">{{ shm.nama }}
                                 ({{ shm.kode }})</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img"
+                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img" 
                                 alt="prediction-image">
                         </div>
                     </div>

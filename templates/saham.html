@@ -25,7 +25,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="static/images/IS.png" type="image/x-icon">
-    <title>Indofood Sukses Makmur Tbk (INDF)</title>
+    <title>Prediksi Saham {{ saham_rel.nama }} ({{ saham_rel.kode }})</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
     <!-- Stock Prediction Chart-->
     <section class="white-section" id="pred-chart">
         <div class="container-fluid section-container">
-            <h1 class="section-heading pred-heading">Indofood Sukses Makmur Tbk. (INDF)</h1>
+            <h1 class="section-heading pred-heading">{{ saham_rel.nama }} ({{ saham_rel.kode }})</h1>
             <hr>
             <h4 class="small-heading">Grafik Prediksi Saham</h4>
             <img src="static/images/bbri-pred-chart.png" class="img-fluid pred-chart-image" alt="prediction-image">
@@ -73,19 +73,7 @@
     <section class="white-section" id="company-profile">
         <div class="container-fluid section-container">
             <h4>Profil Perusahaan</h4>
-            <p class="read-p">PT Indofood Sukses Makmur Tbk merupakan perusahaan yang berbasis di
-                Indonesia yang utamanya bergerak
-                dalam industri pengolahan makanan. Perusahaan ini mengklasifikasikan bisnisnya menjadi lima segmen:
-                produk konsumen bermerek, bogasari, agrobisnis, distribusi serta budi daya dan pengolahan sayuran.
-                Perusahaan menjalankan bisnis produk konsumen bermereknya melalui anak perusahaannya, PT Indofood CBP
-                Sukses Makmur Tbk (ICBP). Produk-produk ICBP mencakup produk susu, makanan ringan, biskuit, bumbu
-                penyedap makanan, minuman serta makanan khusus dan bernutrisi. Bisnis bogasarinya terdiri dari produksi
-                tepung gandum dan pasta. Beberapa merek utama bogasarinya adalah Cakra Kembar dan Segitiga Biru. Segmen
-                agrobisnisnya mencakup budi daya minyak kelapa sawit dan penggilingan serta produksi minyak goreng,
-                margarin, dan mentega bermerek. Bisnis budi daya dan pengolahan sayuran Perusahaan dijalankan oleh anak
-                perusahaannya yang berbasis di Tiongkok, China Minzhong Food Corp Ltd.
-
-            </p>
+            <p class="read-p">{{ saham_rel.profil }}</p>
             <hr>
         </div>
 
@@ -95,37 +83,20 @@
 
     <section class="white-section" id="stock-news">
         <div class="container-fluid section-container">
-            <h4>Berita Indofood Sukses Makmur Tbk.</h4>
+            <h4>Berita Terkait</h4>
 
+            {% for brt in berita_rel: %}
             <div class="media mt-3">
-                <img class="mr-3 news-image" src="static/images/berita-indofood-18-persen.png"
-                    alt="Gambar laba indofood tumbuh 18 persen">
+                <img class="mr-3 news-image" src="static/images/berita/{{ brt.judul }}.jpg"
+                    alt="Gambar berita {{ brt.judul }}">
                 <div class="media-body">
                     <a
-                        href="https://www.cnbcindonesia.com/market/20220331095334-17-327527/penjualan-moncer-laba-indf-tumbuh-18-sepanjang-2021">Penjualan
-                        Moncer, Laba INDF Tumbuh 18% Sepanjang 2021</a>
-                    <p class="gray-text">Sumber: Cnbcindonesia.com - 31 Maret 2022</p>
-                    <p class="news-text read-p">PT Indofood Sukses Makmur Tbk (INDF) berhasil mencetak laba tahun
-                        berjalan yang dapat diatribusikan kepada pemilik entitas induk meningkat sebesar 18% menjadi Rp
-                        7,64 triliun pada 2021, dari Rp 6,46 triliun pada 2020.</p>
+                        href="{{ brt.link_url }}">{{ brt.judul }}</a>
+                    <p class="gray-text">Sumber: {{ brt.sumber }} - {{ brt.tanggal_publish.strftime('%d %b %Y') }}</p>
+                    <p class="news-text read-p">{{ brt.teras }}</p>
                 </div>
             </div>
-            <div>
-                <div class="media mt-3">
-                    <img class="mr-3 news-image" src="static/images/berita-indofood-menakar-kinerja.png"
-                        alt="Gambar laba indofood tumbuh 18 persen">
-                    <div class="media-body">
-                        <a
-                            href="https://economy.okezone.com/read/2022/05/16/278/2595015/menakar-kinerja-saham-icbp-dan-indf-usai-india-larang-ekspor-gandum">Menakar
-                            Kinerja Saham ICBP dan INDF Usai India Larang Ekspor Gandum</a>
-                        <p class="gray-text">Sumber: Okezone.com - 16 Mei 2022</p>
-                        <div class="news-text read-p">
-                            Pemerintah India melarang ekspor gandum menyusul inflasi indeks harga konsumen tahunan
-                            sebesar 7,79% pada April 2022, dengan inflasi makanan melejit 8,38%.
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
             <!-- <div class="row justify-content-start">
                 <div class="col-4">
                     <img class="news-image" src="static/images/berita-indofood-18-persen.png"
