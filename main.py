@@ -45,7 +45,8 @@ def saham():
 
 @app.route('/berita')
 def berita():
-    return render_template('berita.html')
+    all_berita = Berita.query.order_by(Berita.tanggal_publish.desc()).all()
+    return render_template('berita.html', berita=all_berita)
 
 if __name__ == '__main__':
     app.run(debug=True)
