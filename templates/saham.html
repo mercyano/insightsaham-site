@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -24,7 +24,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="static/images/IS.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/IS.png') }}" type="image/x-icon">
     <title>Prediksi Saham {{ saham_rel.nama }} ({{ saham_rel.kode }})</title>
 </head>
 
@@ -62,7 +62,8 @@
             <h1 class="section-heading pred-heading">{{ saham_rel.nama }} ({{ saham_rel.kode }})</h1>
             <hr>
             <h4 class="small-heading">Grafik Prediksi Saham</h4>
-            <img src="static/images/bbri-pred-chart.png" class="img-fluid pred-chart-image" alt="prediction-image">
+            <img src="{{ url_for('static', filename='images/bbri-pred-chart.png') }}" class="img-fluid pred-chart-image"
+                alt="prediction-image">
 
             <hr>
         </div>
@@ -87,11 +88,10 @@
 
             {% for brt in berita_rel: %}
             <div class="media mt-3">
-                <img class="mr-3 news-image" src="static/images/berita/{{ brt.judul }}.jpg"
+                <img class="mr-3 news-image" src="{{url_for ('static', filename='images/berita/'+brt.judul+'.jpg')}}"
                     alt="Gambar berita {{ brt.judul }}">
                 <div class="media-body">
-                    <a
-                        href="{{ brt.link_url }}">{{ brt.judul }}</a>
+                    <a href="{{ brt.link_url }}">{{ brt.judul }}</a>
                     <p class="gray-text">Sumber: {{ brt.sumber }} - {{ brt.tanggal_publish.strftime('%d %b %Y') }}</p>
                     <p class="news-text read-p">{{ brt.teras }}</p>
                 </div>
@@ -115,11 +115,12 @@
                 </div>
             </div> -->
             <!-- ref: https://id.investing.com/news/stock-market-news -->
-            <a href="{{ url_for('berita') }}" class="badge badge-primary float-right mt-2">Lihat lebih <i class="fas fa-angle-double-right"></i></a>
-            
+            <a href="{{ url_for('berita') }}" class="badge badge-primary float-right mt-2">Lihat lebih <i
+                    class="fas fa-angle-double-right"></i></a>
+
         </div>
 
-        
+
 
     </section>
 
