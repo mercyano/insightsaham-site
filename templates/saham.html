@@ -62,7 +62,7 @@
             <h1 class="section-heading pred-heading">{{ saham_rel.nama }} ({{ saham_rel.kode }})</h1>
             <hr>
             <h4 class="small-heading">Grafik Prediksi Saham</h4>
-            <img src="{{ url_for('static', filename='images/bbri-pred-chart.png') }}" class="img-fluid pred-chart-image"
+            <img src="{{url_for ('static', filename='images/saham/'+saham_rel.kode+'_PRED.jpg')}}" class="img-fluid pred-chart-image"
                 alt="prediction-image">
 
             <hr>

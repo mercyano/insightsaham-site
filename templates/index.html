@@ -94,12 +94,12 @@
                 {% for shm in saham: %}
                 <div class="predict-box col-lg-4 col-md-6 col-sm-6">
                     <div class="card text-center">
-                        <img src="static/images/saham/{{ shm.kode }}.jpg" class="card-img-top" alt="logo-indofood">
+                        <img src="static/images/saham/{{ shm.kode }}.jpg" class="card-img-top" alt="logo-{{ shm.kode }}">
                         <div class="card-body">
                             <a href="{{ url_for('saham', kode_saham = shm.kode) }}" class="card-text btn stretched-link">{{ shm.nama }}
                                 ({{ shm.kode }})</a>
-                            <img src="static/images/prediction-img.png" class="card-img-top thumbnail-img" 
-                                alt="prediction-image">
+                            <img src="{{url_for ('static', filename='images/saham/'+shm.kode+'_PRED.jpg')}}" class="card-img-top thumbnail-img" 
+                                alt="prediksi-{{ shm.kode }}">
                         </div>
                     </div>
                 </div>
