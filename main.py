@@ -51,5 +51,13 @@ def berita():
     all_berita = Berita.query.order_by(Berita.tanggal_publish.desc()).all()
     return render_template('berita.html', berita=all_berita)
 
+@app.route('/tentang')
+def tentang():
+    return render_template('tentang.html')
+
+@app.route('/peringatan-resiko')
+def peringatan_resiko():
+    return render_template('peringatan_resiko.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
