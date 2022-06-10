@@ -5,17 +5,18 @@
         <div class="container-fluid">
             <h1 class="big-heading">Lihat prediksi saham dalam 1 klik.</h1>
             <h4>Cari dan pilih prediksi saham di sini, jangan sampai kamu salah beli!</h4>
-            <div>
-                <div class="input-group input-group-lg search-input">
-                    <input type="text" class="form-control" placeholder="Kamu mau lihat prediksi saham apa?">
+            
+                <form action="{{ url_for('cari') }}" method="post">
+                    <div class="input-group input-group-lg search-input">
+                    <input type="text" class="form-control" placeholder="{{ rand_saham.kode }}" name="cari">
                     <div class="input-group-append">
-                        <button class="btn btn-warning" type="button">
+                        <button class="btn btn-warning" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
                 </div>
-            </div>
-
+                </form>
+                
         </div>
     </section>
 
@@ -53,16 +54,19 @@
                 </div>
                 {% endfor %}
 
-                <div class="input-group input-group-lg search-input">
-                    <input type="text" class="form-control" placeholder="Kamu mau lihat prediksi saham apa?">
-                    <div class="input-group-append">
-                        <button class="btn btn-warning" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+                
 
             </div>
+            <form action="{{ url_for('cari') }}" method="post">
+                <div class="input-group input-group-lg search-input">
+                <input type="text" class="form-control" placeholder="{{ rand_saham.kode }}" name="cari">
+                <div class="input-group-append">
+                    <button class="btn btn-warning" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            </form>
     </section>
 
     {% include "footer.html" %}

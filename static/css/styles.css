@@ -203,9 +203,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-orient: vertical;
  }
 
- #stock-news .container-fluid {
-    padding-bottom: 5%;
- }
+ /* #stock-news .container-fluid {
+    padding-bottom: 2%;
+ } */
 
 
 /* berita.html */

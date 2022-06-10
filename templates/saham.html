@@ -1,47 +1,57 @@
 {% include "header.html" %}
 
-    <!-- Stock Prediction Chart-->
-    <section class="white-section" id="pred-chart">
-        <div class="container-fluid section-container">
-            <h1 class="section-heading pred-heading">{{ saham_rel.nama }} ({{ saham_rel.kode }})</h1>
-            <hr>
-            <h4 class="small-heading">Grafik Prediksi Saham</h4>
-            <img src="{{url_for ('static', filename='images/saham/'+saham_rel.kode+'_PRED.jpg')}}"
-                class="img-fluid pred-chart-image" alt="prediction-image">
+<!-- Stock Prediction Chart-->
+<section class="white-section" id="pred-chart">
+  <div class="container-fluid section-container">
+    <h1 class="section-heading pred-heading">
+      {{ saham_rel.nama }} ({{ saham_rel.kode }})
+    </h1>
+    <hr />
+    <h4 class="small-heading">Grafik Prediksi Saham</h4>
+    <img
+      src="{{url_for ('static', filename='images/saham/'+saham_rel.kode+'_PRED.jpg')}}"
+      class="img-fluid pred-chart-image"
+      alt="prediction-image"
+    />
 
-            <hr>
-        </div>
-    </section>
+    <hr />
+  </div>
+</section>
 
-    <!-- Company Profile -->
+<!-- Company Profile -->
 
-    <section class="white-section" id="company-profile">
-        <div class="container-fluid section-container">
-            <h4>Profil Perusahaan</h4>
-            <p class="read-p">{{ saham_rel.profil }}</p>
-            <hr>
-        </div>
+<section class="white-section" id="company-profile">
+  <div class="container-fluid section-container">
+    <h4>Profil Perusahaan</h4>
+    <p class="read-p">{{ saham_rel.profil }}</p>
+    <hr />
+  </div>
+</section>
 
-    </section>
+<!-- Stock News -->
 
-    <!-- Stock News -->
+<section class="white-section" id="stock-news">
+  <div class="container-fluid section-container">
+    <h4>Berita Terkait</h4>
 
-    <section class="white-section" id="stock-news">
-        <div class="container-fluid section-container">
-            <h4>Berita Terkait</h4>
-
-            {% for brt in berita_rel: %}
-            <div class="media mt-3">
-                <img class="mr-3 news-image" src="{{url_for ('static', filename='images/berita/'+brt.judul+'.jpg')}}"
-                    alt="Gambar berita {{ brt.judul }}">
-                <div class="media-body">
-                    <a href="{{ brt.link_url }}">{{ brt.judul }}</a>
-                    <p class="gray-text">Sumber: {{ brt.sumber }} - {{ brt.tanggal_publish.strftime('%d %b %Y') }}</p>
-                    <p class="news-text read-p">{{ brt.teras }}</p>
-                </div>
-            </div>
-            {% endfor %}
-            <!-- <div class="row justify-content-start">
+    {% for brt in berita_rel: %}
+    <div class="media mt-3">
+      <img
+        class="mr-3 news-image"
+        src="{{url_for ('static', filename='images/berita/'+brt.judul+'.jpg')}}"
+        alt="Gambar berita {{ brt.judul }}"
+      />
+      <div class="media-body">
+        <a href="{{ brt.link_url }}">{{ brt.judul }}</a>
+        <p class="gray-text">
+          Sumber: {{ brt.sumber }} - {{ brt.tanggal_publish.strftime('%d %b %Y')
+          }}
+        </p>
+        <p class="news-text read-p">{{ brt.teras }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- <div class="row justify-content-start">
                 <div class="col-4">
                     <img class="news-image" src="static/images/berita-indofood-18-persen.png"
                         alt="gambar laba indofood tumbuh 18 persen">
@@ -58,15 +68,29 @@
                         dari tahun sebelumnya.</p>
                 </div>
             </div> -->
-            <!-- ref: https://id.investing.com/news/stock-market-news -->
-            <a href="{{ url_for('berita') }}" class="badge badge-primary float-right mt-2">Lihat lebih <i
-                    class="fas fa-angle-double-right"></i></a>
+    <!-- ref: https://id.investing.com/news/stock-market-news -->
+    <a
+      href="{{ url_for('berita') }}"
+      class="badge badge-primary float-right mt-2"
+      >Lihat lebih <i class="fas fa-angle-double-right"></i
+    ></a>
 
+    <form action="{{ url_for('cari') }}" method="post">
+      <div class="input-group input-group-lg search-input mt-5 mb-5">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ rand_saham.kode }}"
+          name="cari"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-warning" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
+      </div>
+    </form>
+  </div>
+</section>
 
-
-
-    </section>
-
-
-    {% include "footer.html" %}
+{% include "footer.html" %}
