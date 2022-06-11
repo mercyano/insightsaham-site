@@ -1,6 +1,5 @@
 from flask import Flask, redirect, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-from scipy import rand
 
 app = Flask(__name__)
 
