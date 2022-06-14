@@ -70,8 +70,8 @@ def saham(kode_saham):
         kode_saham+".JK", data_source='yahoo', start='01-01-2022', end=today)
     df = df.filter(['Close'])
     df = df.reset_index(drop=False)
-    scaler = joblib.load("model-development\Stock.pkl")
-    best_model = keras.models.load_model('model-development\model.h5')
+    scaler = joblib.load("model-development/Stock.pkl")
+    best_model = keras.models.load_model('model-development/model.h5')
     
     y_test = scaler.transform(df[['Close']])
     n_future = 2*7
